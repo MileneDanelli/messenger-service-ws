@@ -19,25 +19,18 @@
 <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-
-        console.log("token: " + $('meta[name="csrf-token"]').attr('content'))
-
         Pusher.logToConsole = true;
 
-        var pusher = new Pusher('997f545405c9a18ef10b', {
+        let pusher = new Pusher('997f545405c9a18ef10b', {
             cluster: 'mt1'
         });
 
-        var channel = pusher.subscribe('data');
+        let channel = pusher.subscribe('data');
         channel.bind('data.create', function(response) {
-
             $.ajax({
-                url: "/save",
+                url: '/save'+'?_token=' + '{{ csrf_token() }}',
                 type: 'POST',
                 contentType: 'application/json',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
                 data: JSON.stringify(response),
                 success: (data) => {
                     alert("Hash: " + data + " salva com Sucesso!")
@@ -46,7 +39,6 @@
                     alert(error)
                 }
             });
-
         });
     });
 </script>
