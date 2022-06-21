@@ -18,6 +18,7 @@ class Controller extends BaseController
     public function store(Request $request) {
         $data = [];
         $data['hash'] = $request->hash;
+        $data['app1_id'] = $request->id;
 
         $response = Data::create($data);
 

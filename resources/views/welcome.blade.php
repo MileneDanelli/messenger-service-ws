@@ -28,7 +28,7 @@
         let channel = pusher.subscribe('data');
         channel.bind('data.create', function(response) {
             $.ajax({
-                url: '/save'+'?_token=' + '{{ csrf_token() }}',
+                url: '/save',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(response),

@@ -9,5 +9,5 @@ class Data extends Model
 {
     use HasFactory;
     protected $table = 'data2';
-    protected $fillable = ['hash'];
+    protected $fillable = ['hash', 'app1_id'];
 }
