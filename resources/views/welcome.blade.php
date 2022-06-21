@@ -36,7 +36,7 @@
                     alert("Hash: " + data.hash + " salva com Sucesso!")
                 },
                 error: (error) => {
-                    alert(error)
+                    console.log(error)
                 }
             });
         });

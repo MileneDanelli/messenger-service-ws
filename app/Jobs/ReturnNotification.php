@@ -30,7 +30,7 @@ class ReturnNotification implements ShouldBroadcast
 
     public function broadcastOn()
     {
-        return new Channel("data-response");
+        return new Channel("data");
     }
 
     public function broadcastAs() {
