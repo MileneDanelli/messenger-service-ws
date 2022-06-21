@@ -33,7 +33,7 @@
                 contentType: 'application/json',
                 data: JSON.stringify(response),
                 success: (data) => {
-                    alert("Hash: " + data + " salva com Sucesso!")
+                    alert("Hash: " + data.hash + " salva com Sucesso!")
                 },
                 error: (error) => {
                     alert(error)
